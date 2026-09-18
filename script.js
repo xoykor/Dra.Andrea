@@ -11,8 +11,8 @@ const finePointer = window.matchMedia('(pointer: fine)').matches;
 const WHATSAPP_NUMBER = '55SEUNUMERO';
 
 function buildWhatsAppUrl(message = '') {
-  const base = `https://wa.me/${WHATSAPP_NUMBER}`;
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+  const base = `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`;
+  return message ? `${base}&text=${encodeURIComponent(message)}` : base;
 }
 
 function openWhatsApp(message = '') {
