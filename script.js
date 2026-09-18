@@ -27,5 +27,5 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 document.querySelector('#contact-form').addEventListener('submit', event => {
   event.preventDefault();
   const status = event.currentTarget.querySelector('.form-status');
-  status.textContent = 'Formulário demonstrativo. Conecte-o ao canal de atendimento antes de publicar.';
+  status.textContent = 'Formulário ainda não conectado a um canal de atendimento. Substitua esta função pela integração escolhida antes da publicação definitiva.';
 });
