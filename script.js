@@ -6,6 +6,24 @@ const progress = document.querySelector('.page-progress span');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = window.matchMedia('(pointer: fine)').matches;
 
+// Coloque aqui o número real do WhatsApp, somente com dígitos.
+// Exemplo para Brasil: 5584999999999
+const WHATSAPP_NUMBER = '55SEUNUMERO';
+
+function buildWhatsAppUrl(message = '') {
+  const base = `https://wa.me/${WHATSAPP_NUMBER}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}
+
+function openWhatsApp(message = '') {
+  if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
+    alert('Configure o número real do WhatsApp no arquivo script.js antes de publicar.');
+    return;
+  }
+
+  window.open(buildWhatsAppUrl(message), '_blank', 'noopener,noreferrer');
+}
+
 function setMenu(open) {
   menuButton.setAttribute('aria-expanded', String(open));
   menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
@@ -78,11 +96,39 @@ if (!reducedMotion && finePointer) {
   }
 }
 
+document.querySelectorAll('[data-whatsapp]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+
+    openWhatsApp(
+      'Olá, Dra. Andrea. Gostaria de solicitar informações sobre atendimento jurídico.'
+    );
+  });
+});
+
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 document.querySelector('#contact-form').addEventListener('submit', event => {
   event.preventDefault();
-  const status = event.currentTarget.querySelector('.form-status');
-  status.textContent =
-    'Formulário ainda não conectado a um canal de atendimento. Configure a integração do servidor antes da publicação definitiva.';
+
+  const form = event.currentTarget;
+  const data = new FormData(form);
+
+  const nome = String(data.get('nome') || '').trim();
+  const email = String(data.get('email') || '').trim();
+  const telefone = String(data.get('telefone') || '').trim();
+  const mensagem = String(data.get('mensagem') || '').trim();
+
+  const whatsappMessage = [
+    'Olá, Dra. Andrea.',
+    '',
+    'Gostaria de solicitar informações sobre atendimento jurídico.',
+    '',
+    `Nome: ${nome}`,
+    `E-mail: ${email}`,
+    telefone ? `Telefone: ${telefone}` : null,
+    `Assunto: ${mensagem}`
+  ].filter(Boolean).join('\n');
+
+  openWhatsApp(whatsappMessage);
 });
