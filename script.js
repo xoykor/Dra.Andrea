@@ -1,8 +1,10 @@
 const header = document.querySelector('.site-header');
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('#navigation');
-const navLinks = navigation.querySelectorAll('a');
+const navLinks = [...navigation.querySelectorAll('a')];
+const progress = document.querySelector('.page-progress span');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(pointer: fine)').matches;
 
 function setMenu(open) {
   menuButton.setAttribute('aria-expanded', String(open));
@@ -25,11 +27,17 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 980) setMenu(false);
 }, { passive: true });
 
-function updateHeader() {
-  header.classList.toggle('is-scrolled', window.scrollY > 18);
+function updateScrollUI() {
+  const y = window.scrollY;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = max > 0 ? Math.min(1, y / max) : 0;
+
+  header.classList.toggle('is-scrolled', y > 28);
+  progress.style.transform = `scaleX(${ratio})`;
 }
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
+
+updateScrollUI();
+window.addEventListener('scroll', updateScrollUI, { passive: true });
 
 if (!reducedMotion && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
@@ -39,11 +47,35 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.14, rootMargin: '0px 0px -4% 0px' });
+  }, {
+    threshold: 0.13,
+    rootMargin: '0px 0px -5% 0px'
+  });
 
   document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 } else {
   document.querySelectorAll('.reveal').forEach(element => element.classList.add('visible'));
+}
+
+if (!reducedMotion && finePointer) {
+  const portrait = document.querySelector('[data-parallax]');
+
+  if (portrait) {
+    const reset = () => {
+      portrait.style.transform = '';
+    };
+
+    portrait.addEventListener('pointermove', event => {
+      const rect = portrait.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      portrait.style.transform =
+        `perspective(1100px) rotateY(${x * 2.3}deg) rotateX(${y * -2.3}deg) translate3d(0,0,0)`;
+    });
+
+    portrait.addEventListener('pointerleave', reset);
+  }
 }
 
 document.querySelector('#year').textContent = new Date().getFullYear();
@@ -51,5 +83,6 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 document.querySelector('#contact-form').addEventListener('submit', event => {
   event.preventDefault();
   const status = event.currentTarget.querySelector('.form-status');
-  status.textContent = 'Formulário ainda não conectado a um canal de atendimento. Substitua esta função pela integração escolhida antes da publicação definitiva.';
+  status.textContent =
+    'Formulário ainda não conectado a um canal de atendimento. Configure a integração do servidor antes da publicação definitiva.';
 });
