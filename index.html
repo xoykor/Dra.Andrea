@@ -4,26 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Dra. Andrea — informações profissionais sobre atuação jurídica, atendimento e canais de contato.">
-  <meta name="theme-color" content="#0b211c">
-  <meta name="color-scheme" content="light">\n  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#091b17">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="index,follow">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dra. Andrea | Advocacia">
   <meta property="og:description" content="Informações profissionais sobre atuação jurídica, atendimento e canais de contato.">
   <meta property="og:image" content="dra-andrea.jpg">
+
   <title>Dra. Andrea | Advocacia</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
+  <div class="page-progress" aria-hidden="true"><span></span></div>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="site-header" id="inicio">
-    <div class="header-inner">
+    <div class="header-shell">
       <a class="brand" href="#inicio" aria-label="Dra. Andrea Advocacia — início">
         <span class="brand-mark" aria-hidden="true">A</span>
         <span class="brand-copy">
@@ -33,235 +40,358 @@
       </a>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Abrir menu">
-        <span></span><span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <nav id="navigation" class="main-nav" aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
         <a href="#atuacao">Atuação</a>
         <a href="#atendimento">Atendimento</a>
-        <a href="#contato" class="nav-cta">Contato</a>
+        <a href="#contato" class="nav-contact">Contato <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="conteudo">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-orbit hero-orbit-a" aria-hidden="true"></div>
-      <div class="hero-orbit hero-orbit-b" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-a" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-b" aria-hidden="true"></div>
 
-      <div class="hero-grid shell">
+      <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span aria-hidden="true"></span> Atuação jurídica</p>
-          <h1 id="hero-title">Clareza para compreender.<br><em>Responsabilidade para atuar.</em></h1>
-          <p class="hero-intro">
-            Informações profissionais sobre áreas de atuação, forma de atendimento e canais de contato.
-          </p>
+          <p class="eyebrow"><span></span> Atuação jurídica</p>
 
-          <div class="hero-actions">
-            <a class="button button-primary" href="#contato">
-              <span>Ver contato</span><b aria-hidden="true">↗</b>
-            </a>
-            <a class="text-link" href="#atuacao">Conhecer áreas de atuação <span aria-hidden="true">↓</span></a>
+          <h1 id="hero-title">
+            Clareza para<br>
+            compreender.
+            <em>Responsabilidade<br>para atuar.</em>
+          </h1>
+
+          <div class="hero-copy-bottom">
+            <p class="hero-intro">
+              Informações profissionais sobre áreas de atuação, forma de atendimento e canais de contato.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-light" href="#contato">
+                <span>Contato</span>
+                <i aria-hidden="true">↗</i>
+              </a>
+              <a class="quiet-link light-link" href="#atuacao">
+                Áreas de atuação
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
           </div>
 
-          <div class="hero-meta" aria-label="Informações profissionais">
-            <div><span>Atendimento</span><strong>Presencial e on-line</strong></div>
-            <div><span>Inscrição</span><strong>OAB/UF nº [INFORMAR]</strong></div>
+          <div class="hero-facts" aria-label="Informações profissionais">
+            <div>
+              <small>Atendimento</small>
+              <strong>Presencial e on-line</strong>
+            </div>
+            <div>
+              <small>Inscrição profissional</small>
+              <strong>OAB/UF nº [INFORMAR]</strong>
+            </div>
           </div>
         </div>
 
-        <div class="portrait-wrap reveal delay-1">
-          <div class="portrait-backdrop" aria-hidden="true"></div>
-          <figure class="portrait-card">
+        <div class="portrait-stage reveal reveal-image" data-parallax>
+          <div class="portrait-architecture" aria-hidden="true">
+            <span class="arch arch-a"></span>
+            <span class="arch arch-b"></span>
+          </div>
+
+          <figure class="portrait">
             <img src="dra-andrea.jpg" alt="Retrato profissional da Dra. Andrea" width="800" height="1000" fetchpriority="high">
             <figcaption>
               <span>01</span>
-              <p>Atendimento profissional e comunicação direta.</p>
+              <p>Atuação profissional<br>e comunicação direta.</p>
             </figcaption>
           </figure>
+
+          <span class="portrait-monogram" aria-hidden="true">A</span>
+        </div>
+
+        <div class="hero-side-index" aria-hidden="true">
+          <span>01</span>
+          <i></i>
+          <span>05</span>
         </div>
       </div>
 
-      <a class="scroll-cue" href="#sobre" aria-label="Ir para a seção Sobre">
-        <span>Role para explorar</span><i aria-hidden="true"></i>
+      <a class="scroll-marker" href="#sobre" aria-label="Continuar para a seção Sobre">
+        <span>Explorar</span>
+        <i aria-hidden="true"></i>
       </a>
     </section>
 
-    <section class="statement dark-section" id="sobre">
-      <div class="shell section-grid">
-        <div class="section-kicker reveal">
-          <p class="section-number">02 — Sobre</p>
-          <p class="section-caption">Informação, análise e comunicação em cada etapa.</p>
+    <section class="manifesto" id="sobre">
+      <div class="shell manifesto-grid">
+        <div class="section-label reveal">
+          <span>02</span>
+          <p>Sobre</p>
         </div>
 
-        <div class="statement-copy reveal">
-          <p class="lead">Atuação jurídica começa pela compreensão do <em>contexto.</em></p>
-          <div class="statement-detail">
+        <div class="manifesto-main reveal">
+          <p class="display-copy">
+            O Direito começa pela compreensão do
+            <em>contexto.</em>
+          </p>
+
+          <div class="manifesto-detail">
             <p>
               A atuação profissional é conduzida a partir da análise individual de cada situação,
               dos documentos apresentados e das normas jurídicas aplicáveis, com comunicação
               sobre os caminhos juridicamente possíveis.
             </p>
-            <a class="text-link light" href="#contato">Informações de contato <span aria-hidden="true">↗</span></a>
+
+            <a class="quiet-link" href="#contato">
+              Informações de contato
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </div>
+
+      <div class="manifesto-rule shell" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
     </section>
 
-    <section class="practice section-pad" id="atuacao">
+    <section class="practice" id="atuacao">
       <div class="shell">
-        <div class="section-heading reveal">
-          <div>
-            <p class="section-number">03 — Áreas de atuação</p>
-            <h2>Áreas de atuação<br><em>jurídica.</em></h2>
-          </div>
-          <p>Informações objetivas sobre os campos de atuação profissional indicados neste site.</p>
-        </div>
-
-        <div class="practice-list">
-          <article class="practice-item reveal">
-            <span>01</span>
-            <div><h3>Direito Civil</h3><p>Contratos, responsabilidade civil, obrigações e questões patrimoniais.</p></div>
-            <i aria-hidden="true">↗</i>
-          </article>
-
-          <article class="practice-item reveal">
-            <span>02</span>
-            <div><h3>Direito de Família</h3><p>Divórcio, guarda, alimentos e sucessões, conforme as particularidades de cada situação.</p></div>
-            <i aria-hidden="true">↗</i>
-          </article>
-
-          <article class="practice-item reveal">
+        <div class="section-head reveal">
+          <div class="section-label">
             <span>03</span>
-            <div><h3>Direito Empresarial</h3><p>Orientação jurídica preventiva e acompanhamento de questões relacionadas à atividade empresarial.</p></div>
-            <i aria-hidden="true">↗</i>
+            <p>Áreas de atuação</p>
+          </div>
+
+          <h2>Atuação jurídica,<br><em>com objetividade.</em></h2>
+
+          <p class="section-intro">
+            Informações sobre os campos de atuação profissional indicados neste site.
+          </p>
+        </div>
+
+        <div class="practice-grid">
+          <article class="practice-card reveal">
+            <div class="card-top">
+              <span>01</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+            <div class="card-body">
+              <h3>Direito<br>Civil</h3>
+              <p>Contratos, responsabilidade civil, obrigações e questões patrimoniais.</p>
+            </div>
           </article>
 
-          <article class="practice-item reveal">
-            <span>04</span>
-            <div><h3>Consultoria Jurídica</h3><p>Análise jurídica de documentos, riscos e alternativas aplicáveis à situação apresentada.</p></div>
-            <i aria-hidden="true">↗</i>
+          <article class="practice-card reveal">
+            <div class="card-top">
+              <span>02</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+            <div class="card-body">
+              <h3>Direito de<br>Família</h3>
+              <p>Divórcio, guarda, alimentos e sucessões, conforme as particularidades de cada situação.</p>
+            </div>
+          </article>
+
+          <article class="practice-card reveal">
+            <div class="card-top">
+              <span>03</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+            <div class="card-body">
+              <h3>Direito<br>Empresarial</h3>
+              <p>Orientação jurídica preventiva e acompanhamento de questões relacionadas à atividade empresarial.</p>
+            </div>
+          </article>
+
+          <article class="practice-card reveal">
+            <div class="card-top">
+              <span>04</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+            <div class="card-body">
+              <h3>Consultoria<br>Jurídica</h3>
+              <p>Análise jurídica de documentos, riscos e alternativas aplicáveis à situação apresentada.</p>
+            </div>
           </article>
         </div>
 
-        <p class="editable-note">* Antes da publicação, mantenha apenas áreas que correspondam efetivamente à atuação profissional da advogada.</p>
+        <p class="editorial-note">
+          * Antes da publicação, mantenha apenas áreas que correspondam efetivamente à atuação profissional da advogada.
+        </p>
       </div>
     </section>
 
-    <section class="method section-pad" id="atendimento">
-      <div class="shell method-grid">
-        <div class="method-intro reveal">
-          <p class="section-number">04 — Atendimento</p>
-          <h2>Como funciona o<br><em>atendimento.</em></h2>
+    <section class="process" id="atendimento">
+      <div class="shell process-grid">
+        <div class="process-title reveal">
+          <div class="section-label section-label-light">
+            <span>04</span>
+            <p>Atendimento</p>
+          </div>
+
+          <h2>Uma condução<br><em>clara em cada etapa.</em></h2>
           <p>Uma apresentação objetiva das etapas usuais de contato e análise jurídica.</p>
         </div>
 
-        <ol class="steps">
+        <ol class="process-list">
           <li class="reveal">
-            <span>01</span>
-            <div><h3>Contato inicial</h3><p>Recebimento das informações iniciais e identificação do assunto jurídico apresentado.</p></div>
+            <span class="process-number">01</span>
+            <div>
+              <h3>Contato inicial</h3>
+              <p>Recebimento das informações iniciais e identificação do assunto jurídico apresentado.</p>
+            </div>
           </li>
           <li class="reveal">
-            <span>02</span>
-            <div><h3>Análise</h3><p>Avaliação dos fatos, documentos e aspectos jurídicos relacionados à situação.</p></div>
+            <span class="process-number">02</span>
+            <div>
+              <h3>Análise</h3>
+              <p>Avaliação dos fatos, documentos e aspectos jurídicos relacionados à situação.</p>
+            </div>
           </li>
           <li class="reveal">
-            <span>03</span>
-            <div><h3>Orientação e acompanhamento</h3><p>Apresentação das alternativas juridicamente cabíveis e, quando houver contratação, acompanhamento do serviço profissional.</p></div>
+            <span class="process-number">03</span>
+            <div>
+              <h3>Orientação e acompanhamento</h3>
+              <p>Apresentação das alternativas juridicamente cabíveis e, quando houver contratação, acompanhamento do serviço profissional.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="quote-section" aria-label="Informação profissional">
-      <div class="quote-glow" aria-hidden="true"></div>
-      <div class="shell quote-inner reveal">
-        <span class="quote-mark" aria-hidden="true">“</span>
-        <blockquote>Cada situação deve ser analisada individualmente, considerando seus fatos, documentos e normas aplicáveis.</blockquote>
-        <p>— Dra. Andrea</p>
+    <section class="editorial-quote" aria-label="Informação profissional">
+      <div class="quote-mark" aria-hidden="true">“</div>
+      <div class="shell quote-grid">
+        <div class="quote-label reveal">
+          <span>Princípio</span>
+          <i></i>
+        </div>
+
+        <blockquote class="reveal">
+          Cada situação deve ser analisada individualmente,
+          considerando seus <em>fatos, documentos e normas aplicáveis.</em>
+        </blockquote>
+
+        <p class="quote-signature reveal">— Dra. Andrea</p>
       </div>
     </section>
 
-    <section class="contact section-pad" id="contato">
+    <section class="contact" id="contato">
       <div class="shell contact-grid">
-        <div class="contact-heading reveal">
-          <p class="section-number">05 — Contato</p>
-          <h2>Canais de<br><em>contato.</em></h2>
-          <p>Utilize os dados profissionais ou o formulário para solicitar informações sobre atendimento.</p>
+        <div class="contact-copy reveal">
+          <div class="section-label">
+            <span>05</span>
+            <p>Contato</p>
+          </div>
 
-          <div class="contact-cards">
-            <a href="mailto:contato@exemplo.com" class="contact-card">
-              <span>E-mail</span><strong>contato@exemplo.com</strong><i aria-hidden="true">↗</i>
+          <h2>Canais de<br><em>contato.</em></h2>
+
+          <p class="contact-intro">
+            Utilize os dados profissionais ou o formulário para solicitar informações sobre atendimento.
+          </p>
+
+          <div class="contact-details">
+            <a href="mailto:contato@exemplo.com">
+              <small>E-mail</small>
+              <strong>contato@exemplo.com</strong>
+              <span aria-hidden="true">↗</span>
             </a>
-            <a href="tel:+5500000000000" class="contact-card">
-              <span>Telefone</span><strong>(00) 00000-0000</strong><i aria-hidden="true">↗</i>
+            <a href="tel:+5500000000000">
+              <small>Telefone</small>
+              <strong>(00) 00000-0000</strong>
+              <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
 
         <form class="contact-form reveal" id="contact-form">
-          <div class="field">
-            <label for="nome">Nome completo</label>
-            <input id="nome" type="text" name="nome" autocomplete="name" required placeholder="Seu nome">
+          <div class="form-heading">
+            <span>Mensagem</span>
+            <p>Preencha os campos abaixo.</p>
           </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="nome">Nome completo</label>
+              <input id="nome" type="text" name="nome" autocomplete="name" required placeholder="Seu nome">
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" type="tel" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000">
+            </div>
+          </div>
+
           <div class="field">
             <label for="email">E-mail</label>
             <input id="email" type="email" name="email" autocomplete="email" required placeholder="seuemail@exemplo.com">
           </div>
+
           <div class="field">
-            <label for="telefone">Telefone</label>
-            <input id="telefone" type="tel" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000">
-          </div>
-          <div class="field">
-            <label for="mensagem">Mensagem</label>
+            <label for="mensagem">Assunto</label>
             <textarea id="mensagem" name="mensagem" required rows="4" placeholder="Informe brevemente o assunto do contato"></textarea>
           </div>
 
-          <button class="button button-primary" type="submit">
-            <span>Enviar mensagem</span><b aria-hidden="true">↗</b>
-          </button>
+          <div class="form-footer">
+            <button class="button button-dark" type="submit">
+              <span>Enviar mensagem</span>
+              <i aria-hidden="true">↗</i>
+            </button>
+
+            <p class="form-note">
+              O envio de mensagem não constitui contratação nem substitui a análise jurídica individual do caso.
+            </p>
+          </div>
 
           <p class="form-status" role="status" aria-live="polite"></p>
-          <p class="form-note">O envio de mensagem não constitui contratação nem substitui a análise jurídica individual do caso.</p>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div class="footer-brand">
-        <a class="brand brand-footer" href="#inicio">
-          <span class="brand-mark" aria-hidden="true">A</span>
-          <span class="brand-copy"><strong>Dra. Andrea</strong><small>Advocacia</small></span>
-        </a>
-        <p>Informações profissionais sobre atuação jurídica e canais de atendimento.</p>
-      </div>
+    <div class="shell footer-top">
+      <a class="footer-wordmark" href="#inicio" aria-label="Voltar ao início">
+        <span>Dra.</span>
+        <strong>Andrea</strong>
+      </a>
 
-      <address>
-        <p>Identificação profissional</p>
+      <p>Advocacia</p>
+    </div>
+
+    <div class="shell footer-grid">
+      <div>
+        <small>Identificação profissional</small>
         <span>Dra. Andrea</span>
         <span>OAB/UF nº [INFORMAR]</span>
-      </address>
+      </div>
 
       <div>
-        <p>Contato</p>
+        <small>Contato</small>
         <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>
         <a href="tel:+5500000000000">(00) 00000-0000</a>
       </div>
 
       <div>
-        <p>Atendimento</p>
+        <small>Atendimento</small>
         <span>Presencial e on-line</span>
         <span>Segunda a sexta</span>
       </div>
 
-      <div class="footer-bottom">
-        <small>Publicidade de caráter informativo. As informações deste site não constituem promessa de resultado.</small>
-        <small>© <span id="year"></span> Dra. Andrea Advocacia.</small>
-        <a href="#inicio">Voltar ao topo ↑</a>
-      </div>
+      <a class="footer-up" href="#inicio">
+        Voltar ao topo <span aria-hidden="true">↑</span>
+      </a>
+    </div>
+
+    <div class="shell footer-legal">
+      <p>Publicidade de caráter informativo. As informações deste site não constituem promessa de resultado.</p>
+      <p>© <span id="year"></span> Dra. Andrea Advocacia.</p>
     </div>
   </footer>
 </body>
