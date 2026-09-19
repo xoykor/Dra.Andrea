@@ -8,7 +8,7 @@ const finePointer = window.matchMedia('(pointer: fine)').matches;
 
 // Coloque aqui o número real do WhatsApp, somente com dígitos.
 // Exemplo para Brasil: 5584999999999
-const WHATSAPP_NUMBER = '55SEUNUMERO';
+const WHATSAPP_NUMBER = '5584988089777';
 
 function buildWhatsAppUrl(message = '') {
   const base = `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`;
