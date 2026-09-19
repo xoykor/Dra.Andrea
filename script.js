@@ -11,8 +11,8 @@ const finePointer = window.matchMedia('(pointer: fine)').matches;
 const WHATSAPP_NUMBER = '5584988089777';
 
 function buildWhatsAppUrl(message = '') {
-  const base = `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`;
-  return message ? `${base}&text=${encodeURIComponent(message)}` : base;
+  const base = `https://wa.me/${WHATSAPP_NUMBER}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
 function openWhatsApp(message = '') {
@@ -38,7 +38,7 @@ menuButton.addEventListener('click', () => {
 navLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') setMenu(false);
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') { setMenu(false); menuButton.focus(); }
 });
 
 window.addEventListener('resize', () => {
@@ -131,4 +131,5 @@ document.querySelector('#contact-form').addEventListener('submit', event => {
   ].filter(Boolean).join('\n');
 
   openWhatsApp(whatsappMessage);
+  form.querySelector('.form-status').textContent = 'Continue no WhatsApp para revisar e enviar sua mensagem.';
 });
